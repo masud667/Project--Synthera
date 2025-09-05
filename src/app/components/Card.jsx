@@ -1,22 +1,40 @@
-import React from 'react';
+import { FaStar } from "react-icons/fa";
 
-const Card = () => {
-    return (
-        <div className="card bg-base-100 shadow-sm">
-            <figure>
-                <img
-                src="https://img.daisyui.com/images/stock/photo-1606107557195-0e29a4b5b4aa.webp"
-                alt="Shoes" />
-            </figure>
-            <div className="card-body">
-                <h2 className="card-title">Card Title</h2>
-                <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-                <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
-                </div>
-            </div>
+const Card = ({ product }) => {
+  return (
+    <div className="card bg-base-100 shadow-sm hover:shadow-md transition">
+      <figure className="h-48">
+        <img
+          src={product.img}
+          alt={product.name}
+          className="h-full w-full object-cover"
+        />
+      </figure>
+      <div className="card-body p-4">
+        {/* Product Title */}
+        <h2 className="card-title text-base">{product.name}</h2>
+
+        {/* Price + Rating */}
+        <div className="flex items-center justify-between mt-2">
+          <p className="text-lg font-semibold">${product.price}</p>
+          <div className="flex items-center gap-1 text-yellow-500">
+            {Array.from({ length: 5 }).map((_, i) => (
+              <FaStar
+                key={i}
+                size={14}
+                className={i < product.rating ? "fill-current" : "text-gray-300"}
+              />
+            ))}
+          </div>
         </div>
-    );
+
+        {/* Action */}
+        <div className="card-actions mt-3">
+          <button className="btn btn-sm btn-primary w-full">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  );
 };
 
 export default Card;
