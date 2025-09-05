@@ -3,8 +3,9 @@ import React from 'react';
 const NavBar = () => {
 
     const navItems = <>
-                        <li><a>Item 1</a></li>
-                        <li><a>Item 3</a></li>
+                        <li><a>Home</a></li>
+                        <li><a>Shop</a></li>
+                        <li><a>Synthera AI</a></li>
                     </>
 
     return (
