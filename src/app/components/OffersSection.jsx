@@ -81,45 +81,63 @@ const OffersSection = () => {
           </p>
         </motion.div>
 
-        {/* Countdown Timer */}
-        <motion.div 
-          className="bg-white rounded-2xl shadow-lg p-6 mb-12 flex flex-col md:flex-row items-center justify-between"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
-          viewport={{ once: true }}
-        >
-          <div className="flex items-center mb-4 md:mb-0">
-            <Zap className="w-8 h-8 text-yellow-500 mr-4" />
-            <div>
-              <h3 className="text-xl font-bold text-primary/80">Flash Sale Ending Soon!</h3>
-              <p className="text-gray-600">Hurry up before the offers expire</p>
-            </div>
-          </div>
-          
-          <div className="flex space-x-4 text-primary">
-            <div className="flex flex-col items-center ">
-              <span className="text-2xl font-bold bg-gray-100 rounded-lg px-3 py-2">
-                {timeLeft.hours.toString().padStart(2, '0')}
-              </span>
-              <span className="text-xs text-gray-500 mt-1">HOURS</span>
-            </div>
-            <span className="text-2xl font-bold pt-2">:</span>
-            <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold bg-gray-100 rounded-lg px-3 py-2">
-                {timeLeft.minutes.toString().padStart(2, '0')}
-              </span>
-              <span className="text-xs text-gray-500 mt-1">MINUTES</span>
-            </div>
-            <span className="text-2xl font-bold pt-2">:</span>
-            <div className="flex flex-col items-center">
-              <span className="text-2xl font-bold bg-gray-100 rounded-lg px-3 py-2">
-                {timeLeft.seconds.toString().padStart(2, '0')}
-              </span>
-              <span className="text-xs text-gray-500 mt-1">SECONDS</span>
-            </div>
-          </div>
-        </motion.div>
+      {/* Countdown Timer */}
+<motion.div 
+  className="relative overflow-hidden rounded-2xl shadow-2xl p-6 mb-12 flex flex-col md:flex-row items-center justify-between
+             bg-gradient-to-r from-pink-600/70 via-purple-700/70 to-blue-900/70 backdrop-blur-lg border border-white/20"
+  initial={{ opacity: 0, y: 20 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.5, delay: 0.2 }}
+  viewport={{ once: true }}
+>
+  {/* Glowing animated ring */}
+  <div className="absolute -inset-1 bg-gradient-to-r from-pink-500 via-purple-600 to-blue-700 opacity-40 blur-2xl animate-pulse" />
+
+  <div className="relative flex items-center mb-6 md:mb-0 z-10">
+    <Zap className="w-9 h-9 text-yellow-400 mr-4 animate-bounce" />
+    <div>
+      <h3 className="text-2xl font-extrabold bg-gradient-to-r from-yellow-300 via-pink-200 to-purple-100 bg-clip-text text-transparent">
+        Flash Sale Ending Soon!
+      </h3>
+      <p className="text-sm md:text-base text-gray-200 mt-1">
+        Hurry up before the offers expire
+      </p>
+    </div>
+  </div>
+  
+  <div className="relative flex space-x-6 text-primary z-10">
+    {/* Hours */}
+    <div className="flex flex-col items-center">
+      <span className="text-3xl font-extrabold bg-white/90 text-gray-900 rounded-lg px-4 py-2 shadow-md transform transition-transform hover:scale-110">
+        {timeLeft.hours.toString().padStart(2, '0')}
+      </span>
+      <span className="text-xs text-gray-300 mt-1 tracking-widest">HOURS</span>
+    </div>
+
+    {/* Separator */}
+    <span className="text-3xl font-bold text-white pt-1 animate-pulse">:</span>
+
+    {/* Minutes */}
+    <div className="flex flex-col items-center">
+      <span className="text-3xl font-extrabold bg-white/90 text-gray-900 rounded-lg px-4 py-2 shadow-md transform transition-transform hover:scale-110">
+        {timeLeft.minutes.toString().padStart(2, '0')}
+      </span>
+      <span className="text-xs text-gray-300 mt-1 tracking-widest">MINUTES</span>
+    </div>
+
+    {/* Separator */}
+    <span className="text-3xl font-bold text-white pt-1 animate-pulse">:</span>
+
+    {/* Seconds */}
+    <div className="flex flex-col items-center">
+      <span className="text-3xl font-extrabold bg-white/90 text-gray-900 rounded-lg px-4 py-2 shadow-md transform transition-transform hover:scale-110">
+        {timeLeft.seconds.toString().padStart(2, '0')}
+      </span>
+      <span className="text-xs text-gray-300 mt-1 tracking-widest">SECONDS</span>
+    </div>
+  </div>
+</motion.div>
+
 
         {/* Offers Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
