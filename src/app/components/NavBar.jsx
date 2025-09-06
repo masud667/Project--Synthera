@@ -16,6 +16,7 @@ const NavBar = () => {
 
       <li><Link href="/" >Home</Link></li>
       <li><Link href="/Shop">Products</Link></li>
+      <li><Link href="/dashboard">Dashboard</Link></li>
 
       <li>
         <a>Synthera AI</a>
