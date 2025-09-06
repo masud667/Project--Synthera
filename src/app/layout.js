@@ -2,6 +2,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "@/app/components/NavBar";
 import SyntheraChatbot from "./components/chatbot/SyntheraChatbot";
+import NextAuthProvider from "@/providers/NextAuthProvider";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -24,9 +26,11 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <NavBar></NavBar>
-        <div>{children}</div>
-        <SyntheraChatbot/>
+        <NextAuthProvider>
+          <NavBar></NavBar>
+          <div>{children}</div>
+          <SyntheraChatbot />
+        </NextAuthProvider>
       </body>
     </html>
   );
