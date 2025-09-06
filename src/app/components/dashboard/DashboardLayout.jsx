@@ -12,7 +12,7 @@ import UserProfile from "./user/UserProfile";
 
 export default function DashboardLayout() {
   const [activeRoute, setActiveRoute] = useState("profile");
-  const [role] = useState("seller");
+  const [role] = useState("user");
 
   const renderContent = () => {
     if (role === "user") {
