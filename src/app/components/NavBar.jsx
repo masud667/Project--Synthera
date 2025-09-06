@@ -11,9 +11,24 @@ const NavBar = () => {
 
   const navItems = (
     <>
-      <li><a>Home</a></li>
+      {/* <li><a>Home</a></li>
       <li><a>Shop</a></li>
-      <li><a>Synthera AI</a></li>
+      <li><a>Synthera AI</a></li> */}
+      {/* <li>
+        <a>Home</a>
+      </li>
+      <li>
+        <a>Shop</a>
+      </li> */}
+      
+
+      <li><Link href="/" >Home</Link></li>
+      <li><Link href="/Shop">Products</Link></li>
+      <li><Link href="/dashboard">Dashboard</Link></li>
+
+      <li>
+        <a>Synthera AI</a>
+      </li>
     </>
   );
 
