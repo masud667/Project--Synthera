@@ -1,16 +1,22 @@
 import React from "react";
 import Image from "next/image";
 import logo from "../assets/synthera_logo.png";
+import Link from "next/link";
 
 const NavBar = () => {
   const navItems = (
     <>
-      <li>
+      {/* <li>
         <a>Home</a>
       </li>
       <li>
         <a>Shop</a>
-      </li>
+      </li> */}
+      
+
+      <li><Link href="/" >Home</Link></li>
+      <li><Link href="/Shop">Products</Link></li>
+
       <li>
         <a>Synthera AI</a>
       </li>
