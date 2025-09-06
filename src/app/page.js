@@ -1,8 +1,11 @@
+import Hero from "./components/Hero";
+import ShopContent from "./components/products/ShopContent";
+
 export default function Home() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-gray-900 text-white">
-      <h1 className="text-5xl font-bold">This is Home Page 🏠</h1>
-      <h1 className="text-5xl font-bold">checking...</h1>
-    </main>
+    <>
+      <Hero></Hero>
+  <ShopContent></ShopContent>
+    </>
   )
 }
